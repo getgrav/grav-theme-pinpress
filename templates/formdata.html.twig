@@ -1,0 +1,27 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {% block masterslider %}{% endblock %}
+     <div class="above-sidebar-wrapper"><section id="content-section-1"><div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="padding-top: 0px; padding-bottom: 30px; "><div class="container"><div class="gdlr-master-slider-item gdlr-slider-item gdlr-item">
+     </div><div class="clear"></div></div></div><div class="clear"></div></section></div>
+
+     {% include 'partials/blog_sidebar_header.html.twig' %}
+     <div class="post-outer">
+      <div class="gdlr-item gdlr-blog-full ">
+        <div class="gdlr-ux gdlr-blog-full-ux">
+            <div class="blog-content-inner-wrapper contact">
+               <h3 class="gdlr-blog-title">{{ form.message }}</h3>
+               <p>Here is the summary of what you wrote to us:</p>
+               {{ content }}
+               {% if config.plugins.form.enabled %}
+                  {% include "forms/data.html.twig" %}
+               {% endif  %}
+                <br />
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/blog_sidebar_footer.html.twig' %}
+{% endblock %}

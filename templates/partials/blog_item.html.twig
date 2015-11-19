@@ -1,0 +1,184 @@
+<div class="post-outer">
+  <div class="gdlr-item gdlr-blog-full ">
+    <div class="gdlr-ux gdlr-blog-full-ux">
+      <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+        <div class="gdlr-standard-style">
+          <div class="blog-date-wrapper gdlr-title-font">
+            <i class="icon-calendar-empty"></i>
+            <div class="blog-date-day">
+              {{ page.date|date("d") }}
+            </div>
+            <div class="blog-date-month">
+              {{ page.date|date("M") }}
+            </div>
+            <div class="blog-date-year">
+              {{ page.date|date("Y") }}
+            </div>
+          </div>
+            <div class="blog-content-wrapper">
+              <div class="gdlr-blog-thumbnail {% if page.header.youtube or page.header.soundcloud %}gdlr-video{% endif %}">
+                {% if page.header.youtube %}
+                  <iframe width="600" height="403" src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                  {% elseif page.header.soundcloud %}
+                  <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
+                  {% else %}
+                  {{ page.media.images|first.cropZoom(640,430).html }}
+                {% endif %}
+               {% if not page.header.hide_date %}
+                <div class="gdlr-sticky-banner">{{ page.date|date("G:i") }} {{ page.date|date("A") }}</div>
+                 {% endif %}
+              </div>
+              <div class="blog-content-inner-wrapper">
+                <header class="post-header">
+
+                  {% if page.header.link %}
+                    <h3 class="gdlr-blog-title">
+                      {% if page.header.continue_link is not sameas(false) %}
+                        <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
+                      {% endif %}
+                      <a href="{{ page.header.link }}">{{ page.title }}</a>
+                    </h3>
+                    {% else %}
+                    <h3 class="gdlr-blog-title"><a href="{{ page.url }}">{{ page.title }}</a></h3>
+                  {% endif %}
+
+                  <div class="gdlr-blog-info gdlr-title-font gdlr-info">
+
+                    {% if page.taxonomy.tag %}
+                      <div class="blog-info blog-tag"><i class="icon-tags"></i>
+                        {% for tag in page.taxonomy.tag %}
+                          <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+
+                    {% if page.header.author.name or site.author.name %}
+                      <div class="blog-info blog-author"><i class="icon-user"></i>
+                        {% if page.header.author.name %}
+                          {% if page.header.author.url %}
+                           <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
+                           {% else %}
+                           {{ page.header.author.name }}
+                         {% endif %}
+                         {% else %}
+                         {% if site.author.url %}
+                           <a href="{{ site.author.url }}">{{ site.author.name }}</a>
+                           {% else %}
+                           {{ site.author.name }}
+                         {% endif %}
+                       {% endif %}
+                     </div>
+                   {% endif %}
+                    <div class="clear"></div>
+                  </div>
+                </header>
+                <div class="gdlr-blog-content">
+                  {% if page.header.continue_link is sameas(false) %}
+                    {{ page.content }}
+                    {% if not truncate %}
+                      {% set show_prev_next = true %}
+                      {% endif %}
+                      {% elseif truncate and page.summary != page.content %}
+                      {{ page.summary }}
+                      <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
+                      {% elseif truncate %}
+                      {{ page.content|truncate(550) }}
+                      <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
+                      {% else %}
+                      {{ page.content }}
+                      {% set show_prev_next = true %}
+                      {% endif %}
+
+                      <div class="gdlr-social-share">
+                        <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url={{ page.url(true) }}&amp;name={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status={{ page.title|replace({' ': "%20"}) }}-{{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/twitter.png" alt="twitter-share" width="112" height="112"></a>
+                        <div class="clear"></div>
+                      </div>
+
+                      {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+                        <br /><br />
+                        <div class="gdlr-related-post-widget">
+                         <h3 class="related-post-title">You may also like</h3>
+                         {% include 'partials/relatedpages.html.twig' %}
+                         <div class="clear"></div>
+                       </div>
+                     {% endif %}
+
+                     {% if page.activeChild() %}
+                       <div class="gdlr-post-author">
+                        <h3 class="post-author-title">About Post Author</h3>
+                        <div class="clear"></div>
+                        {% if page.header.author %}
+                          {% if page.header.author.logo %}
+                            <div class="post-author-avartar">
+                              <img src="{{ page.media.images[header.author.logo] }}" class="avatar avatar-125 photo" />
+                            </div>
+                          {% endif %}
+                          <div class="post-author-content">
+                            <h4 class="post-author">
+                              {% if page.header.author.url %}
+                                <a href="{{ page.header.author.url }}" rel="author">{{ page.header.author.name }}</a>
+                                {% else %}
+                                {{ page.header.author.name }}
+                              {% endif %}
+                            </h4>
+                            {{ page.header.author.description }}
+                          </div>
+                          {% else %}
+                          {% if site.author.logo %}
+                            <div class="post-author-avartar">
+                              <img src="{{ theme_url }}/images/{{ site.author.logo }}" class="avatar avatar-125 photo" />
+                            </div>
+                          {% endif %}
+                          <div class="post-author-content">
+                            <h4 class="post-author">
+                              {% if site.author.url %}
+                                <a href="{{ site.author.url }}" rel="author">{{ site.author.name }}</a>
+                                {% else %}
+                                {{ site.author.name }}
+                              {% endif %}
+                            </h4>
+                            {{ site.author.description }}
+                          </div>
+                        {% endif %}
+
+                        <div class="clear"></div>
+                      </div>
+                    {% endif %}
+                    </div>
+                  </div>
+                </div>
+              <div class="clear"></div>
+
+                {% if not truncate %}
+                {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}
+                  <div class="comments" id="comments">
+                    <div class="comment-respond">
+                      <h3 class="comment-reply-title">Comments:</h3>
+                    {{ jscomments(config.plugins.jscomments.provider) }}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    {% if show_prev_next %}
+      <div class="blog-pager" id="blog-pager">
+        {% if not page.isFirst %}
+          <span id="blog-pager-newer-link">
+            <a class="blog-pager-newer-link" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Newer Post</a>
+          </span>
+        {% endif %}
+
+        {% if not page.isLast %}
+         <span id="blog-pager-older-link">
+          <a class="blog-pager-older-link" href="{{ page.prevSibling.url }}">Older Post <i class="fa fa-chevron-right"></i></a>
+        </span>
+      {% endif %}
+      <a class="home-link" href="{{ base_url_absolute }}">Home</a>
+    </div>
+  {% endif %}

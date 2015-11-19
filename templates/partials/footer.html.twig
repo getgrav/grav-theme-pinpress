@@ -1,0 +1,73 @@
+<footer class="footer-wrapper">
+    <div class="footer-container container">
+        <div class="footer-column four columns section" id="footer-widget-1">
+            <div class="widget FollowByEmail" id="FollowByEmail1">
+                <h2 class="title">{{ site.feedburner.title }}</h2>
+                <div class="content">
+                    {{ site.feedburner.text }}
+                    <div class="follow-by-email-inner">
+                        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open(&quot;https://feedburner.google.com/fb/a/mailverify?uri={{ site.feedburner.id }}&quot;, &quot;popupwindow&quot;, &quot;scrollbars=yes,width=550,height=520&quot;); return true" target="popupwindow">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input class="follow-by-email-address" name="email" placeholder="Email address..." type="text">
+                                        </td>
+                                        <td>
+                                            <input class="follow-by-email-submit" type="submit" value="Submit">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <input name="uri" type="hidden" value="{{ site.feedburner.id }}">
+                            <input name="loc" type="hidden" value="en_US">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column four columns section" id="footer-widget-2">
+            <div class="widget Label" id="Label2">
+                <h2>{{ site.labels.title }}</h2>
+                <div class="widget-content list-label-widget-content">
+                    <ul>
+                        {% for item in site.labels.items %}
+                            <li>
+                                <a dir="ltr" href="{{ item.url }}">{{ item.label }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column four columns section" id="footer-widget-3">
+            <div class="widget HTML" id="HTML4">
+                <h2 class="title">{{ site.footer.title }}</h2>
+                <div class="widget-content">
+                    {{ site.footer.content }}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="copyright-wrapper">
+        <div class="copyright-container container">
+            <div class="copyright-left">
+                {% if site.copyright %}
+                    {{ site.copyright.text1 }} © {{ site.copyright.year }} <a href="{{ site.copyright.url }}">{{ site.copyright.text2}}</a>
+                {% endif %}
+                {% if site.copyright2 %}
+                    {{ site.copyright2.text1 }} <a href="{{ site.copyright2.url }}">{{ site.copyright2.text2}}</a>
+                {% endif %}
+            </div>
+            <div class="copyright-right">
+                <span id="mycontent">
+                    Designed By <a href="http://www.soratemplates.com/" target="_blank" title="Blogger Templates">Sora Templates</a> and <a href="http://mybloggerthemes.com/" target="_blank" title="Free Blogger Templates">My Blogger Themes</a>
+                </span>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</footer>

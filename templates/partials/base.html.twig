@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class='{% if browser.getBrowser == 'msie' and browser.getVersion == 7 and browser.getVersion == 8 %}{% else %}v2{% endif %} {% if browser.getBrowser == 'msie' and browser.getVersion == 7 %}ie ie7 ltie8 ltie9{% endif %} {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}ie ie8 ltie9{% endif %}'>
+<head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+        {% include 'partials/metadata.html.twig' %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
+        <link href='https://fonts.googleapis.com/css?family=Merriweather%3A300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&amp;subset=latin%2Clatin-ext&amp;ver=3.9.1' id='Merriweather-google-font-css' media='all' rel='stylesheet' type='text/css'/>
+        <link href='https://fonts.googleapis.com/css?family=Arvo%3Aregular%2Citalic%2C700%2C700italic&amp;subset=latin&amp;ver=3.9.1' id='Arvo-google-font-css' media='all' rel='stylesheet' type='text/css'/>
+        <link href='//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'/>
+        <meta name="google-translate-customization" content="{{ site.google_translate_token }}">
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css/widget_css_2_bundle.css') %}
+            {% do assets.addCss('theme://css/style.css') %}
+            {% do assets.addCss('theme://css/lightbox.css') %}
+            {% if browser.getBrowser == 'msie' and browser.getVersion >= 7 and browser.getVersion <= 8 %}
+                {% do assets.addCss('theme://css/ie.css') %}
+            {% endif %}
+        {% endblock %}
+        {{ assets.css() }}
+
+        {% block javascripts %}
+            {% do assets.add('jquery',101) %}
+            {% do assets.add('theme://js/jquery-migrate-1.2.1.min.js') %}
+            {% do assets.add('theme://js/lightbox.min.js') %}
+            {% do assets.add('theme://js/script.js') %}
+        {% endblock %}
+        {{ assets.js() }}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        {% endif %}
+
+    {% endblock head %}
+</head>
+<body id="top" class="page page-template-default">
+    <div class="body-wrapper  float-menu gdlr-pattern-background">
+        {% block header %}
+            <header class='gdlr-header-wrapper'>
+                <div class='gdlr-logo-container container'>
+                    <div class='gdlr-logo-wrapper'>
+                        <div class='gdlr-logo'>
+                            <div class='header section' id='header'><div class='widget Header' id='Header1'>
+                                <div id='header-inner'>
+                                    <a href='{{ base_url_absolute }}' style='display: block'>
+                                        <img id='Header1_headerimg' src='{{ theme_url }}/images/logo.png' style='display: block' alt='{{ site.title }}' />
+                                    </a>
+                                </div>
+                            </div></div>
+                            <div class='gdlr-responsive-navigation dl-menuwrapper' id='gdlr-responsive-navigation'><button class='dl-trigger'>Open Menu</button><ul class='dl-menu gdlr-main-mobile-menu' id='menu-main-menu'>
+                                {% for item in site.mainmenu %}
+                                    <li class='menu-item menu-item-type-post_type'><a href='{{ item.url }}'>{{ item.text }}</a></li>
+                                {% endfor %}
+                            </ul></div>
+                        </div>
+                    </div>
+                </div>
+                <div class='clear'></div>
+            </header>
+        {% endblock %}
+
+        {% block navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
+        {% block body %}
+            <div class='content-wrapper'>
+                <div class='gdlr-content'>
+
+                    {% block masterslider %}
+                        {% include 'partials/masterslider.html.twig' %}
+                    {% endblock %}
+
+                    {% block content %}{% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block footer %}
+                {% include 'partials/footer.html.twig' %}
+            {% endblock %}
+        </div>
+
+    </body>
+    </html>

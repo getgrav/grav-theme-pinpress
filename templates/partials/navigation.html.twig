@@ -1,0 +1,45 @@
+<div class='gdlr-navigation-outer-wrapper' id='gdlr-navigation-outer-wrapper'>
+    <div class='gdlr-navigation-container container'>
+        <div class='gdlr-navigation-gimmick' id='gdlr-navigation-gimmick'></div>
+        <div class='gdlr-navigation-wrapper'><nav class='gdlr-navigation' id='gdlr-main-navigation' role='navigation'>
+            <ul class='sf-menu gdlr-main-menu' id='menu-main-menu-1'>
+            <li class='menu-item menu-item-type-post_type gdlr-normal-menu'><a href='{{ base_url_absolute }}'>Home</a></li>
+            {% for item in site.mainmenu %}
+                {% if item.url | contains('page:') %}
+                    <li class='menu-item menu-item-type-post_type gdlr-normal-menu'><a href='{{ base_url_absolute }}/{{ item.url|replace({"page:":''}) }}'>{{ item.text }}</a></li>
+                    {% else %}
+                    <li class='menu-item menu-item-type-post_type gdlr-normal-menu'><a href='{{ item.url }}'>{{ item.text }}</a></li>
+                {% endif %}
+            {% endfor %}
+    </ul></nav>
+    <div class='top-search-button' id='top-search-button'>
+        <i class='icon-search'></i>
+    </div>
+    <div class='clear'></div></div>
+</div>
+</div>
+<div id='gdlr-navigation-substitute'></div>
+<div class='gdlr-nav-search-form' id='gdlr-nav-search-form'>
+    <div class='gdlr-nav-search-container container'>
+        <form>
+            <i class='icon-search'></i>
+            <div class='search-text' id='search-text2'>
+                <input autocomplete='off' data-default='Type keywords...' name='q' type='text' value="{{ query }}" data-search-input2="{{ base_url_relative }}{{ config.plugins.simplesearch.route}}/query"/><input type='hidden' value='max-results=6'/>
+            </div>
+            <div class='clear'></div>
+        </form>
+    </div>
+</div>
+
+<script>
+jQuery(document).ready(function($){
+    var input = $('[data-search-input2]');
+
+    input.on('keypress', function(event) {
+        if (event.which == 13 && input.val().length > 3) {
+            event.preventDefault();
+            window.location.href = input.data('search-input2') + '{{ config.system.param_sep }}' + input.val();
+        }
+    });
+});
+</script>

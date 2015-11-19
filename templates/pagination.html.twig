@@ -1,0 +1,26 @@
+{% if pagination|length > 1 %}
+
+<div class="blog-pager" id="blog-pager">
+    <div class="showpageArea">
+    {% if pagination.hasPrev %}
+        <span class="showpageNum"><a rel="prev" href="{{ base_url }}{{ pagination.params }}{{ pagination.prevUrl }}">&laquo;</a></span>
+    {% endif %}
+
+    {% for paginate in pagination %}
+
+        {% if paginate.isCurrent %}
+            <span class="showpagePoint">{{ paginate.number }}</span>
+        {% elseif paginate.isInDelta %}
+            <span class="showpageNum"><a href="{{ base_url }}{{ pagination.params }}{{ paginate.url }}">{{ paginate.number }}</a></span>
+        {% elseif paginate.isDeltaBorder %}
+            <span class="showpageNum">&hellip;</span>
+        {% endif %}
+
+    {% endfor %}
+    {% if pagination.hasNext %}
+        <span class="showpageNum"><a rel="next" href="{{ base_url }}{{ pagination.params }}{{ pagination.nextUrl }}">&raquo;</a></span>
+    {% endif %}
+    </div>
+</div>
+
+{% endif %}

@@ -1,0 +1,25 @@
+ <div id="related-posts">
+    {% for related_path, score in related_pages %}
+        {% set related = grav['pages'].get(related_path) %}
+            {% if related %}
+             <div class="related-post-widget six columns">
+                <div class="related-post-widget-thumbnail">
+                    {% if related.media.images|first %}
+                        {{ related.media.images|first.cropResize(150,150).html }}
+                        {% else %}
+                        <img src='{{ theme_url }}/images/no-image.png' style='display: block' >
+                    {% endif %}
+                </div>
+
+                {% if config.plugins.relatedpages.show_score %}
+                    <span class="score">{{ score }}</span>
+                {% endif %}
+                <div class="related-post-widget-content">
+                    <div class="related-post-widget-title">
+                        <a href="{{ related.url }}" title="{{ related.title }}">{{ related.title }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,9 @@
+<div class="widget HTML">
+    <h2 class="title">{{ module.title }}</h2>
+    <div class="widget-content">
+        {% for item in module.header.social %}
+            <a class="social-shortcode" href="{{ item.url }}">{{ module.media.images[item.icon] }}</a>
+        {% endfor %}
+        {{ module.content }}
+    </div>
+</div>

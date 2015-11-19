@@ -1,0 +1,60 @@
+{% embed 'partials/base.html.twig' %}
+
+    {% set base_url = page.parent.url %}
+        {% set feed_url = base_url %}
+            {% if base_url == '/' %}
+                {% set base_url = '' %}
+                {% endif %}
+
+                {% if base_url == base_url_relative %}
+                    {% set feed_url = base_url~'/'~page.parent.slug %}
+                {% endif  %}
+
+                {% block content %}
+                    {% block masterslider %}{% endblock %}
+
+                    <div class="above-sidebar-wrapper"><section id="content-section-1"><div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="padding-top: 0px; padding-bottom: 30px; "><div class="container"><div class="gdlr-master-slider-item gdlr-slider-item gdlr-item">
+                            </div><div class="clear"></div></div></div><div class="clear"></div></section></div>       
+                    <div class="with-sidebar-wrapper gdlr-right-sidebar">
+                        <div class="with-sidebar-container container">
+
+                            <div class="with-sidebar-left eight columns">
+                                <div class="with-sidebar-content twelve columns">
+                                    <div id="content-section-2">
+                                        <div class="section-container container">
+                                            <div class="blog-item-wrapper gdlr-blog-full-type">
+                                                <div class="blog-item-holder">
+                                                    <div class="main section" id="main">
+                                                        <div class="widget Blog" id="Blog1">
+                                                            <div class="widget Blog">
+                                                                <div class="date-outer">
+                                                                    <div class="date-posts">
+                                                                        {% include 'partials/blog_item.html.twig' with {'truncate':false,'big_header':true} %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="gdlr-sidebar gdlr-right-sidebar four1 columns">
+                                <div class="gdlr-item-start-content sidebar-right-item">
+                                    <div class="section" id="swid">
+                                        {% include 'partials/sidebar.html.twig' %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                {% endblock %}
+{% endembed %}

@@ -1,0 +1,18 @@
+{% if form.message %}<div class="alert">{{ form.message }}</div>{% endif %}
+
+<form name="{{ form.name }}"
+      action="{{ uri.rootUrl ~ (form.action|default(page.route)) }}"
+      method="{{ form.method|upper|default('POST') }}">
+{% for field in form.fields %}
+    {% set value = form.value(field.name) %}
+    <div>
+        {% include "forms/fields/#{field.type|default('text')}/#{field.type|default('text')}.html.twig" %}
+    </div>
+{% endfor %}
+
+	<div class="buttons">
+	{% for button in form.buttons %}
+	    <button class="{{ button.classes|default('button') }}" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
+	{% endfor %}
+	</div>
+</form>

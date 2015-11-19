@@ -1,0 +1,76 @@
+<!-- Above Sidebar Section-->
+<div class='above-sidebar-wrapper'>
+        <div class='gdlr-color-wrapper  gdlr-show-all no-skin' style='padding-top: 0px; padding-bottom: 30px; '>
+            <div class='container'>
+                <div class='gdlr-master-slider-item gdlr-slider-item gdlr-item'>
+                    <!-- MasterSlider -->
+                    <div class='master-slider-parent ms-parent-id-5' id='P_MS53d5cadc7a9d0'>
+                        <!-- MasterSlider Main -->
+                        <div class='master-slider ms-skin-default' id='MS53d5cadc7a9d0'>
+                            {% for item in site.masterslider %}
+                                <div class='ms-slide' data-delay='6' data-fill-mode='fill'>
+                                    <img alt='' data-src='{{ theme_url }}/images/{{ item.image }}' src='{{ theme_url }}/images/blank.gif' title=''/>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- END MasterSlider Main -->
+                    </div>
+                    <!-- END MasterSlider -->
+                    <script>
+                    (function ( $ ) {
+                        "use strict";
+
+                        $(function () {
+                            var masterslider_a9d0 = new MasterSlider();
+
+                // slider controls
+                masterslider_a9d0.control('arrows'     ,{ autohide:true, overVideo:true  });                    
+                masterslider_a9d0.control('circletimer',{ autohide:false, overVideo:true, color:'#272727', radius:10, stroke:2   });
+                masterslider_a9d0.control('timebar'    ,{ autohide:false, overVideo:true, align:'bottom', color:'#efefef'  , width:4 });
+                // slider setup
+                masterslider_a9d0.setup("MS53d5cadc7a9d0", {
+                    width           :    {{ site.masterslider_setup.width            }},
+                    height          :    {{ site.masterslider_setup.height           }},
+                    space           :    {{ site.masterslider_setup.space            }},
+                    start           :    {{ site.masterslider_setup.start            }},
+                    grabCursor      :    {{ site.masterslider_setup.grabCursor       }},
+                    swipe           :    {{ site.masterslider_setup.swipe            }},
+                    mouse           :    {{ site.masterslider_setup.mouse            }},
+                    layout          :    "{{ site.masterslider_setup.layout           }}",
+                    wheel           :    {{ site.masterslider_setup.wheel            }},
+                    autoplay        :    {{ site.masterslider_setup.autoplay         }},
+                    instantStartLayers:  {{ site.masterslider_setup.instantStartLayers }},
+                    loop            :    {{ site.masterslider_setup.loop             }},
+                    shuffle         :    {{ site.masterslider_setup.shuffle          }},
+                    preload         :    {{ site.masterslider_setup.preload          }},
+                    heightLimit     :    {{ site.masterslider_setup.heightLimit      }},
+                    autoHeight      :    {{ site.masterslider_setup.autoHeight       }},
+                    smoothHeight    :    {{ site.masterslider_setup.smoothHeight     }},
+                    endPause        :    {{ site.masterslider_setup.endPause         }},
+                    overPause       :    {{ site.masterslider_setup.overPause        }},
+                    fillMode        :    "{{ site.masterslider_setup.fillMode         }}",
+                    centerControls  :    {{ site.masterslider_setup.centerControls   }},
+                    layersMode      :    "{{ site.masterslider_setup.layersMode       }}",
+                    hideLayers      :    {{ site.masterslider_setup.hideLayers       }},
+                    fullscreenMargin:    {{ site.masterslider_setup.fullscreenMargin }},
+                    speed           :    {{ site.masterslider_setup.speed            }},
+                    dir             :    "{{ site.masterslider_setup.dir              }}",
+                    parallaxMode    :    '{{ site.masterslider_setup.parallaxMode     }}',
+                    view            :    "{{ site.masterslider_setup.view             }}"
+                });
+
+
+$("head").append( "<link href='http://fonts.googleapis.com/css?family=Arvo:regular|Merriweather:700' id='ms-fonts' media='all' rel='stylesheet' type='text/css'/>" );
+
+window.masterslider_instances = window.masterslider_instances || {};
+window.masterslider_instances["5_a9d0"] = masterslider_a9d0;
+});
+
+})(jQuery);
+</script>
+</div>
+<div class='clear'></div>
+</div>
+</div>
+<div class='clear'></div>
+</div>
