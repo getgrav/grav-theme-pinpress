@@ -7,13 +7,16 @@
         {% include 'partials/metadata.html.twig' %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
-        <link href='https://fonts.googleapis.com/css?family=Merriweather%3A300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&amp;subset=latin%2Clatin-ext&amp;ver=3.9.1' id='Merriweather-google-font-css' media='all' rel='stylesheet' type='text/css'/>
-        <link href='https://fonts.googleapis.com/css?family=Arvo%3Aregular%2Citalic%2C700%2C700italic&amp;subset=latin&amp;ver=3.9.1' id='Arvo-google-font-css' media='all' rel='stylesheet' type='text/css'/>
-        <link href='//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'/>
+        <!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'/>
+        <link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet'/>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab%3A400%2C700&ver=4.2.2' id='roboto-slab-css' media='all' rel='stylesheet' type='text/css'/>
         <meta name="google-translate-customization" content="{{ site.google_translate_token }}">
         {% block stylesheets %}
-            {% do assets.addCss('theme://css/widget_css_2_bundle.css') %}
+            {% do assets.addCss('theme://css/widget.css') %}
             {% do assets.addCss('theme://css/style.css') %}
+            {% do assets.addCss('theme://css/content.css') %}
             {% do assets.addCss('theme://css/lightbox.css') %}
             {% if browser.getBrowser == 'msie' and browser.getVersion >= 7 and browser.getVersion <= 8 %}
                 {% do assets.addCss('theme://css/ie.css') %}
@@ -28,6 +31,12 @@
             {% do assets.add('theme://js/script.js') %}
         {% endblock %}
         {{ assets.js() }}
+
+        <script>
+        $(document).ready(function(){
+          $(".widget h2").wrapInner("<span></span>");
+        });
+        </script>
 
         {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>

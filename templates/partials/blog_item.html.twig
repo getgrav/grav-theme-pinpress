@@ -14,7 +14,7 @@
       {% endif %}
 
       <div class="meta">
-        <div><i class="fa fa-clock-o"></i> Wednesday, March 04, 2015</div>
+        <div><i class="fa fa-clock-o"></i> {{ page.date|date(config.system.pages.dateformat.long) }}</div>
         <div><i class="fa fa-user"></i> <span style="color:#E74C3C">
           {% if page.header.author.name or site.author.name %}
           {% if page.header.author.name %}
@@ -32,39 +32,26 @@
           {% endif %}
           {% endif %}
         </span></div>
+        {% if page.taxonomy.tag %}
+        <div> <i class="fa fa-tags"></i>
+          {% for tag in page.taxonomy.tag %}
+          <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="clear"></div>
+
+      <div class="entry-{% if page.header.youtube or page.header.soundcloud %}video{% else %}image{% endif %}">
+        {% if page.header.youtube %}
+        <iframe width="600" height="403" src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+        {% elseif page.header.soundcloud %}
+        <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
+        {% else %}
+        {{ page.media.images|first.cropZoom(640,430).html('','', 'thumb') }}
+        {% endif %}
       </div>
 
-      <div class="blog-content-wrapper">
-        <div class="gdlr-blog-thumbnail {% if page.header.youtube or page.header.soundcloud %}gdlr-video{% endif %}">
-          {% if page.header.youtube %}
-          <iframe width="600" height="403" src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-          {% elseif page.header.soundcloud %}
-          <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
-          {% else %}
-          {{ page.media.images|first.cropZoom(640,430).html }}
-          {% endif %}
-          {% if not page.header.hide_date %}
-          <div class="gdlr-sticky-banner">{{ page.date|date("G:i") }} {{ page.date|date("A") }}</div>
-          {% endif %}
-        </div>
-        <div class="blog-content-inner-wrapper">
-          <header class="post-header">
-
-            <div class="gdlr-blog-info gdlr-title-font gdlr-info">
-
-              {% if page.taxonomy.tag %}
-              <div class="blog-info blog-tag"><i class="icon-tags"></i>
-                {% for tag in page.taxonomy.tag %}
-                <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
-                {% endfor %}
-              </div>
-              {% endif %}
-
-
-              <div class="clear"></div>
-            </div>
-          </header>
-          <div class="gdlr-blog-content">
             {% if page.header.continue_link is sameas(false) %}
             {{ page.content }}
             {% if not truncate %}
@@ -72,17 +59,55 @@
             {% endif %}
             {% elseif truncate and page.summary != page.content %}
             {{ page.summary }}
-            <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
             {% elseif truncate %}
             {{ page.content|truncate(550) }}
-            <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
             {% else %}
             {{ page.content }}
             {% set show_prev_next = true %}
             {% endif %}
 
-            <div class="gdlr-social-share">
-              <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url={{ page.url(true) }}&amp;name={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status={{ page.title|replace({' ': "%20"}) }}-{{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/twitter.png" alt="twitter-share" width="112" height="112"></a>
+            <div class="entry-meta clearfix">
+              <div class="up_arrow"></div>
+              <div class="pull-right share-story-container">
+                <ul class="share-story">
+                  <li>
+                    <a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://twitter.com/home?status={{ page.title|replace({' ': "%20"}) }}-{{ page.url(true) }}" target="_blank">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                      <i class="fa fa-digg"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                      <i class="fa fa-reddit"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.tumblr.com/share/link?url={{ page.url(true) }}&amp;name={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                      <i class="fa fa-tumblr"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {% if truncate and page.summary != page.content %}
+              <div class="pull-left"><a href="{{ page.url }}" class="read-more">Read More</a></div>
+              {% elseif truncate %}
+              <div class="pull-left"><a href="{{ page.url }}" class="read-more">Read More</a></div>
+              {% endif %}
               <div class="clear"></div>
             </div>
 
@@ -136,9 +161,6 @@
               <div class="clear"></div>
             </div>
             {% endif %}
-          </div>
-        </div>
-      </div>
       <div class="clear"></div>
 
       {% if not truncate %}
