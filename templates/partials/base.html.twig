@@ -47,12 +47,14 @@
     <div class="clear"></div>
     {% block body %}
     <div class='container' id="content-wrapper">
-        {% block content %}{% endblock %}
+      <div class="row" id="primary">
+      {% block content %}{% endblock %}
+    </div>
     </div>
     {% endblock %}
 
     {% block footer %}
-    {% include 'partials/footer.html.twig' %}
+      {% include 'partials/footer.html.twig' %}
     {% endblock %}
   </div>
 
