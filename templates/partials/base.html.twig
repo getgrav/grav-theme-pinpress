@@ -35,53 +35,26 @@
 
     {% endblock head %}
 </head>
-<body id="top" class="page page-template-default">
-    <div class="body-wrapper  float-menu gdlr-pattern-background">
-        {% block header %}
-            <header class='gdlr-header-wrapper'>
-                <div class='gdlr-logo-container container'>
-                    <div class='gdlr-logo-wrapper'>
-                        <div class='gdlr-logo'>
-                            <div class='header section' id='header'><div class='widget Header' id='Header1'>
-                                <div id='header-inner'>
-                                    <a href='{{ base_url_absolute }}' style='display: block'>
-                                        <img id='Header1_headerimg' src='{{ theme_url }}/images/logo.png' style='display: block' alt='{{ site.title }}' />
-                                    </a>
-                                </div>
-                            </div></div>
-                            <div class='gdlr-responsive-navigation dl-menuwrapper' id='gdlr-responsive-navigation'><button class='dl-trigger'>Open Menu</button><ul class='dl-menu gdlr-main-mobile-menu' id='menu-main-menu'>
-                                {% for item in site.mainmenu %}
-                                    <li class='menu-item menu-item-type-post_type'><a href='{{ item.url }}'>{{ item.text }}</a></li>
-                                {% endfor %}
-                            </ul></div>
-                        </div>
-                    </div>
-                </div>
-                <div class='clear'></div>
-            </header>
-        {% endblock %}
+<body>
+  <div class="firstload-background">
+  </div>
+  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 
-        {% block navigation %}
-            {% include 'partials/navigation.html.twig' %}
-        {% endblock %}
+  <div class="site" id="page">
+    {% block header %}
+      {% include 'partials/header.html.twig' %}
+    {% endblock %}
+    <div class="clear"></div>
+    {% block body %}
+    <div class='container' id="content-wrapper">
+        {% block content %}{% endblock %}
+    </div>
+    {% endblock %}
 
-        {% block body %}
-            <div class='content-wrapper'>
-                <div class='gdlr-content'>
-
-                    {% block masterslider %}
-                        {% include 'partials/masterslider.html.twig' %}
-                    {% endblock %}
-
-                    {% block content %}{% endblock %}
-                    </div>
-                </div>
-            {% endblock %}
-
-            {% block footer %}
-                {% include 'partials/footer.html.twig' %}
-            {% endblock %}
-        </div>
+    {% block footer %}
+    {% include 'partials/footer.html.twig' %}
+    {% endblock %}
+  </div>
 
     </body>
     </html>
