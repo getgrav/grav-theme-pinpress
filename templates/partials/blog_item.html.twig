@@ -13,33 +13,66 @@
       <h1 class="entry-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
       {% endif %}
 
-      <div class="meta">
-        <div><i class="fa fa-clock-o"></i> {{ page.date|date(config.system.pages.dateformat.long) }}</div>
-        <div><i class="fa fa-user"></i> <span style="color:#E74C3C">
-          {% if page.header.author.name or site.author.name %}
-          {% if page.header.author.name %}
-          {% if page.header.author.url %}
-          <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
-          {% else %}
-          {{ page.header.author.name }}
+      {% if truncate %}
+        <div class="meta">
+          <div><i class="fa fa-clock-o"></i> {{ page.date|date(config.system.pages.dateformat.long) }}</div>
+          <div><i class="fa fa-user"></i> <span style="color:#E74C3C">
+            {% if page.header.author.name or site.author.name %}
+            {% if page.header.author.name %}
+            {% if page.header.author.url %}
+            <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
+            {% else %}
+            {{ page.header.author.name }}
+            {% endif %}
+            {% else %}
+            {% if site.author.url %}
+            <a href="{{ site.author.url }}">{{ site.author.name }}</a>
+            {% else %}
+            {{ site.author.name }}
+            {% endif %}
+            {% endif %}
+            {% endif %}
+          </span></div>
+          {% if page.taxonomy.tag %}
+          <div> <i class="fa fa-tags"></i>
+            {% for tag in page.taxonomy.tag %}
+            <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
+            {% endfor %}
+          </div>
           {% endif %}
-          {% else %}
-          {% if site.author.url %}
-          <a href="{{ site.author.url }}">{{ site.author.name }}</a>
-          {% else %}
-          {{ site.author.name }}
-          {% endif %}
-          {% endif %}
-          {% endif %}
-        </span></div>
-        {% if page.taxonomy.tag %}
-        <div> <i class="fa fa-tags"></i>
-          {% for tag in page.taxonomy.tag %}
-          <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
-          {% endfor %}
         </div>
-        {% endif %}
-      </div>
+      {% else %}
+        <div class="meta1">
+          <small>
+          <span><i class="fa fa-clock-o"></i> {{ page.date|date(config.system.pages.dateformat.long) }}</span>
+          <span><i class="fa fa-user"></i>
+            {% if page.header.author.name or site.author.name %}
+            {% if page.header.author.name %}
+            {% if page.header.author.url %}
+            <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
+            {% else %}
+            {{ page.header.author.name }}
+            {% endif %}
+            {% else %}
+            {% if site.author.url %}
+            <a href="{{ site.author.url }}">{{ site.author.name }}</a>
+            {% else %}
+            {{ site.author.name }}
+            {% endif %}
+            {% endif %}
+            {% endif %}
+          </span>
+          {% if page.taxonomy.tag %}
+          <span> <i class="fa fa-tags"></i>
+            {% for tag in page.taxonomy.tag %}
+            <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </small>
+        </div>
+      {% endif %}
+
       <div class="clear"></div>
 
       <div class="entry-{% if page.header.youtube or page.header.soundcloud %}video{% else %}image{% endif %}">
