@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post{% if not truncate %} detailed{% endif %}">
   <div class="entry-container">
     <div class="entry-content">
 
@@ -75,13 +75,13 @@
 
       <div class="clear"></div>
 
-      <div class="entry-{% if page.header.youtube or page.header.soundcloud %}video{% else %}image{% endif %}">
+      <div class="{% if truncate %}entry-{% if page.header.youtube or page.header.soundcloud %}video{% else %}image{% endif %}{% endif %}">
         {% if page.header.youtube %}
         <iframe width="600" height="403" src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen></iframe>
         {% elseif page.header.soundcloud %}
         <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
         {% else %}
-        {{ page.media.images|first.cropZoom(640,430).html('','', 'thumb') }}
+        {{ page.media.images|first.cropZoom(682,430).html('','', 'thumb') }}
         {% endif %}
       </div>
 
