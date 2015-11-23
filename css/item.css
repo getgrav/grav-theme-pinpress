@@ -1,3 +1,21 @@
+.entry-container {
+  background: #FFF;
+  position: relative;
+  margin: 0 25px 20px;
+}
+.post h1 {
+  margin: 0 0px 20px;
+}
+.entry-content p {
+  margin: 15px 0px 20px;
+}
+.separator a {
+  margin-left: 0px!important;
+}
+
+.meta1 {
+  margin-bottom: 30px;
+}
 div.post-avatar {
 border: 3px solid #eaeaea;
 width: 100px;
@@ -168,10 +186,10 @@ border-bottom: 1px solid #ddd;
 
 
 div.meta1 p {
-padding: 10px 0 !important;
-margin-bottom: -20px !important;
-font-size: 16px !important;
-color:#9a9a9a !important;
+padding: 10px 0;
+margin-bottom: -20px;
+font-size: 16px;
+color:#9a9a9a;
 }
 .meta1 span{margin-right:10px}
 

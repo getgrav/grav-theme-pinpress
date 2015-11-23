@@ -940,22 +940,11 @@ font-family: "Roboto Slab","Droid Arabic Kufi",Arial,sans-serif;  margin: 0 25px
 .post img{max-width:100%}
 .entry-video iframe,.thumb{display:block}
 .entry-container{background:#FFF;position:relative}
-div.post.detailed .entry-container {margin: 0 25px 20px;}
-div.post.detailed h1 {
-    margin: 0 0px 20px;
-}
 .entry-content{padding: 25px 0px 0px;}
 .entry-content p{  margin: 15px 25px 20px;
 line-height: 25px;
 font-size: 15px;
 color: #6d7683;}
-div.post.detailed p {
-  margin-right: 0;
-  margin-left: 0;
-}
-div.post.detailed .meta1 {
-  margin-bottom: 30px;
-}
 .entry-image{  overflow: hidden;
 background: #F4F4F4;
 margin-top: 20px;
