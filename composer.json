@@ -1,7 +1,7 @@
 {
     "name": "getgrav/grav-theme-pinpress",
     "type": "grav-theme",
-    "description": "Sora Article is a minimal Theme designed for blogger, ported to Grav.",
+    "description": "Pinpress is a minimal Theme designed for blogger, ported to Grav.",
     "keywords": ["theme","grav", "pinpress", "blog"],
     "homepage": "http://getgrav.org",
     "license": "CC BY 3.0",
