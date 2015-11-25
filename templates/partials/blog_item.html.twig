@@ -227,14 +227,14 @@
             {% endif %}
 
       {% if not truncate %}
-      {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}
-      <div class="comments" id="comments">
-        <div class="comment-respond">
-          <h3 class="comment-reply-title">Comments:</h3>
-          {{ jscomments(config.plugins.jscomments.provider) }}
-        </div>
-      </div>
-      {% endif %}
+        {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}
+        <div class="comments" id="comments">
+          <h4>Comments:</h3>
+            <div class="comments-content">
+              {{ jscomments(config.plugins.jscomments.provider) }}
+            </div>
+          </div>
+        {% endif %}
       {% endif %}
     </div>
   </div>
