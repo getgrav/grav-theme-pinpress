@@ -142,6 +142,7 @@ border-bottom: 1px solid #ddd;
   }
   #related-posts .owl-controls.clickable {
     position: relative;
+        margin-top: 10px;
   }
   .owl-wrapper {
     position: relative;

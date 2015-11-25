@@ -149,15 +149,6 @@
               <div class="clear"></div>
             </div>
 
-            {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
-            <br /><br />
-            <div class="gdlr-related-post-widget">
-              <h3 class="related-post-title">You may also like</h3>
-              {% include 'partials/relatedpages.html.twig' %}
-              <div class="clear"></div>
-            </div>
-            {% endif %}
-
             {% if not truncate %}
             <div class="author-meta box">
               {% if page.header.author %}
@@ -210,28 +201,30 @@
             </div>
             {% endif %}
 
+            {% if not truncate %}
             <div class="related_posts">
               <div id="related-posts">
                 <div class="title">
                   <h4>Related Posts</h4>
                 </div>
-                <div class="carousel_related owl-carousel owl-theme" id="owl-demo" style="opacity: 1; display: block;">
-                  <div class="owl-wrapper-outer">
-                    <div class="owl-wrapper">
-                      <div class="owl-item">
-                        <div class="item-img">
-                          <a href="http://pinpress-soratemplates.blogspot.com/2014/07/amazing-video-quality-vimeo_5.html" title="Amazing Video Quality Vimeo ">
-                            <img style="width:230px;height:160px;" alt="Amazing Video Quality Vimeo " title="Amazing Video Quality Vimeo " src="">
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="carousel_related owl-carousel owl-theme" id="owl-demo">
+                  {% include 'partials/relatedpages.html.twig' %}
                 </div>
               </div>
+              <div style="clear:both"></div>
             </div>
-
-      <div class="clear"></div>
+            <script type='text/javascript'>
+              $(document).ready(function() {
+                $("#owl-demo").owlCarousel({
+                  autoPlay: 3000,
+                  items : 3,
+                  itemsDesktop : [1200,3],
+                  itemsDesktopSmall : [980,2],
+                  itemsMobile : [480,1]
+                });
+              });
+              </script>
+            {% endif %}
 
       {% if not truncate %}
       {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}
