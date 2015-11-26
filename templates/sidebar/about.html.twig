@@ -1,0 +1,18 @@
+<div class="authorzo">
+  <div class="widget widget-about">
+    <div class="widget-about-img">
+      <img src="{{ module.media.images[module.header.image].url }}">"
+    </div>
+    {{ module.content }}
+    {% if module.header.social %}
+    <div class="social-ul">
+      <ul>
+        {% for item in module.header.social %}
+        <li><a href="{{ item.url }}" target="_blank"><i class="fa fa-{{ item.icon }}"></i></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <div class="clearfix"></div>
+  </div>
+</div>

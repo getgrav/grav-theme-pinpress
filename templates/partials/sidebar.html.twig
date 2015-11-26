@@ -1,7 +1,17 @@
+{% for module in page.collection({'items':{'@taxonomy.category': 'sidebar'},'order': {'by': 'default', 'dir': 'asc'}}) %}
+    {% if module.template %}
+      {% if module.header.surround %}
+        {% include 'sidebar/' ~ module.template ~ '.html.twig' %}
+      {% endif %}
+    {% endif %}
+{% endfor %}
+
 <div class="sidebar section" id="sidebar">
   {% for module in page.collection({'items':{'@taxonomy.category': 'sidebar'},'order': {'by': 'default', 'dir': 'asc'}}) %}
       {% if module.template %}
+        {% if not module.header.surround %}
           {% include 'sidebar/' ~ module.template ~ '.html.twig' %}
+        {% endif %}
       {% endif %}
   {% endfor %}
 
