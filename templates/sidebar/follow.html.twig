@@ -1,0 +1,47 @@
+<script type="text/javascript">
+      {% if site.socialcount.facebook_url %}
+      // Facebook Shares Count
+      $.getJSON( 'http://graph.facebook.com/?id={{ site.socialcount.url }}', function( fbdata ) {
+          $('.statistics-facebook').text(fbdata.shares)
+      });
+  {% endif %}
+  {% if site.socialcount.twitter_url %}
+      // Twitter Shares Count
+      $.getJSON( 'http://cdn.api.twitter.com/1/urls/count.json?url={{ site.socialcount.url }}&callback=?', function( twitdata ) {
+          $('#twitter-count').text(twitdata.count)
+      });
+  {% endif %}
+  {% if site.socialcount.linkedin_url %}
+      // LinkedIn Shares Count
+      $.getJSON( 'http://www.linkedin.com/countserv/count/share?url={{ site.socialcount.url }}&callback=?', function( linkdindata ) {
+          $('#linkedin-count').text(linkdindata.count)
+      });
+  {% endif %}
+  </script>
+
+<div class="widget HTML" id="HTML3">
+  <h2 class="title"><span>Follow Us</span></h2>
+  <div class="widget-content">
+    <div class="widget-statistics">
+      <ul>
+        {% for item in module.header.follow %}
+          <li class="statistics-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i>64,461 <span>Fans</span></a></li>
+          <li class="statistics-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i>52,453 <span>Followers</span></a></li>
+          <li class="statistics-vimeo"><a href="#" target="_blank"><i class="fa fa-vimeo-square"></i>3 <span>Subscribers</span></a></li>
+          <li class="statistics-youtube"><a href="#" target="_blank"><i class="fa fa-youtube-play"></i>387 <span>Subscribers</span></a></li>
+          <li class="statistics-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i>7767 <span>Followers</span></a></li>
+          <li class="statistics-dribbble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i>2,851 <span>Followers</span></a></li>
+        {% endfor %}
+
+      </ul></div>
+    </div>
+    <div class="clear"></div>
+    <span class="widget-item-control">
+      <span class="item-control blog-admin">
+        <a class="quickedit" href="//www.blogger.com/rearrange?blogID=2798209682211011904&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=sidebar" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;HTML3&quot;));" target="configHTML3" title="Edit">
+          <img alt="" height="18" src="//img1.blogblog.com/img/icon18_wrench_allbkg.png" width="18">
+        </a>
+      </span>
+    </span>
+    <div class="clear"></div>
+  </div>
