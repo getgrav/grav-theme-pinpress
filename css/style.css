@@ -889,6 +889,10 @@ color: #fff;
 .widget-statistics li span {
 color: #2C2C2C;
 }
+.widget-statistics li span.white {
+color: #fff;
+margin: 0;
+}
 #page{position:relative}
 .top-color div{float:left;height:5px;width:25%}
 .container{margin-right:auto;margin-left:auto;*zoom:1}
