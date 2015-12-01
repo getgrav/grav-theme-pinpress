@@ -28,6 +28,7 @@
         {% block javascripts %}
             {% do assets.add('jquery',101) %}
             {% do assets.add('theme://js/scripts.js') %}
+            {% do assets.add('theme://js/video.js') %}
         {% endblock %}
         {{ assets.js() }}
 
