@@ -941,14 +941,20 @@ text-transform: uppercase;
 line-height: 35px;
 font-weight: normal;
 font-family: "Roboto Slab","Droid Arabic Kufi",Arial,sans-serif;  margin: 0 25px 20px;}
+.post h1.entry-title.single {margin-left: 0;}
 .post img{max-width:100%}
 .entry-video iframe,.thumb{display:block}
 .entry-container{background:#FFF;position:relative}
 .entry-content{padding: 25px 0px 0px;}
+.entry-content.single{padding: 25px;}
 .entry-content p{  margin: 15px 25px 20px;
 line-height: 25px;
 font-size: 15px;
 color: #6d7683;}
+.form-textarea-wrapper.long textarea {
+  min-height: 325px;
+    min-width: 648px;
+}
 .entry-image{  overflow: hidden;
 background: #F4F4F4;
 margin-top: 20px;

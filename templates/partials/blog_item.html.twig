@@ -8,9 +8,9 @@
       {% if page.header.link %}
       <h1 class="entry-title">
         {% if page.header.continue_link is not sameas(false) %}
-        <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
+          <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
         {% endif %}
-        <a href="{{ page.header.link }}">{{ page.title }}</a>
+          <a href="{{ page.header.link }}">{{ page.title }}</a>
       </h1>
       {% else %}
       <h1 class="entry-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
