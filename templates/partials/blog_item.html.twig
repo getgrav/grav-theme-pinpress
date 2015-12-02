@@ -15,8 +15,8 @@
       {% else %}
       <h1 class="entry-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
       {% endif %}
-
       {% if truncate %}
+
         <div class="meta">
           <div><i class="fa fa-clock-o"></i> {{ page.date|date(config.system.pages.dateformat.long) }}</div>
           <div><i class="fa fa-user"></i> <span style="color:#E74C3C">
@@ -240,6 +240,16 @@
           </div>
         </div>
         {% endif %}
+
+        {% if config.plugins.comments.enabled %}
+        <div class="comments" id="comments">
+          <h4>{{ grav.twig.comments|length }} Comments:</h3>
+          <div class="comments-content">
+            {% include 'partials/comments.html.twig' with {'page': page} %}
+          </div>
+        </div>
+        {% endif %}
+
       {% endif %}
     </div>
   </div>

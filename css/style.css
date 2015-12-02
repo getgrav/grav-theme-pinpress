@@ -1014,7 +1014,6 @@ font-size: 15px;}
 .comment-thread ol{margin:0 0 20px}
 .comment-thread .comment-content a,.comments .user a,.comments .comment-thread.inline-thread .user a{color:#F69087}
 .comments .avatar-image-container,.comments .avatar-image-container img{width:48px;max-width:48px;height:48px;max-height:48px}
-.comments .comment-block,.comments .comments-content .comment-replies,.comments .comment-replybox-single{margin-left:60px}
 .comments .comment-block,.comments .comment-thread.inline-thread .comment{border:1px solid #ddd;background:#f9f9f9;padding:10px}
 .comments .comments-content .comment{margin:15px 0 0;padding:0;width:100%;line-height:1em}
 .comments .comments-content .icon.blog-author{position:absolute;top:-12px;right:-12px;margin:0;background-image: url(https://lh4.googleusercontent.com/-yZr9CWeDr1M/UhbCd9bmLkI/AAAAAAAACjI/sllgyp7xoMc/s36/author.png);width:36px;height:36px}
@@ -1025,7 +1024,6 @@ font-size: 15px;}
 .comments .comment-thread.inline-thread .comment{width:auto}
 .comments .comment-thread.inline-thread .comment:after{content:"";position:absolute;top:10px;left:-20px;border-top:1px solid #ddd;width:10px;height:0px}
 .comments .comment-thread.inline-thread .comment .comment-block{border:0;background:transparent;padding:0}
-.comments .comment-thread.inline-thread .comment-block{margin-left:48px}
 .comments .comment-thread.inline-thread .user a{font-size:13px}
 .comments .comment-thread.inline-thread .avatar-image-container,.comments .comment-thread.inline-thread .avatar-image-container img{width:36px;max-width:36px;height:36px;max-height:36px}
 .comments .continue{border-top:0;width:100%}
