@@ -1,14 +1,15 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    {% block masterslider %}{% endblock %}
-     <div class="above-sidebar-wrapper"><section id="content-section-1"><div class="gdlr-color-wrapper  gdlr-show-all no-skin" style="padding-top: 0px; padding-bottom: 30px; "><div class="container"><div class="gdlr-master-slider-item gdlr-slider-item gdlr-item">
-    </div><div class="clear"></div></div></div><div class="clear"></div></section></div>
-
-	{% include 'partials/blog_sidebar_header.html.twig' %}
-			<h1>Error {{ page.header.http_response_code }}</h1>
-			<p>
-				{{ page.content }}
-			</p>
-    {% include 'partials/blog_sidebar_footer.html.twig' %}
+{% include 'partials/blog_sidebar_header.html.twig' %}
+<div class="post">
+  <div class="entry-container">
+    <div class="entry-content  single">
+      <h1 class="entry-title">Error {{ page.header.http_response_code }}</h1>
+      {{ page.content }}
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+{% include 'partials/blog_sidebar_footer.html.twig' %}
 {% endblock %}
