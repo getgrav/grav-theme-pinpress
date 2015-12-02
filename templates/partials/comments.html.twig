@@ -46,7 +46,9 @@
         {{ nonce_field('form', 'form-nonce') }}
     </form>
 
+    {% if form.message %}
     <div class="alert">{{ form.message }}</div>
+    {% endif %}
     </div>
 
 {% endif %}
