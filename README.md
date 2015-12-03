@@ -2,7 +2,7 @@
 
 ![Pinpress](assets/readme_1.png)
 
-Pinpress skeleton is a port of the [Pinpress](http://sora-article-soratemplates.blogspot.com/) by [Sora Templates](http://www.soratemplates.com/).
+PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choice for professionals who’s looking for a magazine theme or a personal, niche, corporate, and marketing blogs. PinPress grav theme is highly customizable so it can match your personal taste and be quickly converted into a multi-purpose theme as well. It's a port of PinPress blogger template by [Sora Templates](http://www.soratemplates.com/).
 
 # Features
 
@@ -11,20 +11,18 @@ Pinpress skeleton is a port of the [Pinpress](http://sora-article-soratemplates.
 * Clean Layout
 * Blog Layout
 * Minimalistic
-* Customizable MasterSlider in header
 * FeedBurner support
 * Social Sharing
 * Browser Compatibility
 * Supports YouTube
 * Supports SoundCloud
-* Simple Gallery
-* Google Translate support
+* Supports Vimeo
 * SimpleSearch support
 * Feeds
 * RelatedPosts plugin support
 * Archives plugin support
 * JSComments plugin support
-* SimpleForm plugin support
+* Comments and Forms support
 
 # Installation
 

@@ -951,6 +951,9 @@ font-family: "Roboto Slab","Droid Arabic Kufi",Arial,sans-serif;  margin: 0 25px
 line-height: 25px;
 font-size: 15px;
 color: #6d7683;}
+.entry-content.single p {
+  margin-left: 0;
+}
 .form-textarea-wrapper.long textarea {
   min-height: 325px;
     min-width: 648px;
@@ -1123,6 +1126,7 @@ margin-right: 15px;
 float: left;
 padding: 10px;
 border: 1px solid #e4e6e8;
+    margin-bottom: 10px;
 background-color: #f6f6f6;
 font-size: 12px;
 text-transform: uppercase;
@@ -1188,14 +1192,11 @@ body{padding:0!important}
 #side-bar{margin:0;width:100%}
 #side-bar .bl_tweets #tweets iframe{min-width:100%!important}
 .share-story{display:block;width:100%;float:none}
-.share-story li{float:none;display:table-cell;width:1%;border-right:1px solid #E6E6E6;border-top:1px solid #E6E6E6}
-.share-story li:first-child{border-left:1px solid #E6E6E6}
-.share-story li a{background:none repeat scroll 0 0 #F0F0F0;border-radius:0;text-align:center;padding:6px 0;width:100%}
+.share-story li{float:none;display:table-cell;width:1%;}
 .share-story-container{margin:0 -30px -15px;position:relative}
 .share-story-container small{top:-23px;left:0;margin:0;position:absolute;text-align:center;width:100%}
 .entry-meta .author-meta{margin-bottom:30px}
 .share-story-container img{margin:0 auto}
-.share-story-container li{background:#f1eff2}
 .entry-meta .author-meta{margin-bottom:30px}
 .entry-meta > [class*="pull"]{float:none}
 .site-footer #footer-body .menu a{display:block;font-size:17px;margin:5px 0;padding:7px 10px}
@@ -1227,6 +1228,7 @@ article.type-page{padding:50px 20px 30px}
 .share-story-container {
 margin: 31px 0 0;
 position: relative;
+width: 100%;
 }
 .read-more {
 display: block;

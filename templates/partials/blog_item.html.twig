@@ -80,7 +80,7 @@
 
       <div class="clear"></div>
 
-      <div class="{% if truncate %}entry-{% if page.header.youtube or page.header.soundcloud or  page.header.vimeo %}video{% else %}image{% endif %}{% endif %}">
+      <div class="{% if truncate %}entry-{% if page.header.youtube or page.header.soundcloud or page.header.vimeo %}video{% else %}image{% endif %}{% else %} resp_video{% endif %}">
         {% if page.header.youtube %}
         <iframe src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen style="width: 750px; height: 421.429px; {% if not truncate %}width: 680px;height: 392px;{% endif %}"></iframe>
         {% endif %}
