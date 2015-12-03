@@ -6,8 +6,7 @@ PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choic
 
 # Features
 
-* Fully responsive
-* Custom navigation menus included
+* Navigation menu included
 * Clean Layout
 * Blog Layout
 * Minimalistic
@@ -22,7 +21,7 @@ PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choic
 * RelatedPosts plugin support
 * Archives plugin support
 * JSComments plugin support
-* Comments and Forms support
+* Comments and Forms plugin support
 
 # Installation
 
