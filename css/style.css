@@ -1159,7 +1159,7 @@ margin-top: 100px;
 #side-bar .bl_tweets #tweets iframe{min-width:100%!important}
 #masthead .bl_search{float:none;margin:0}
 #masthead .bl_search.collapse.in{margin:20px 15px}
-.navbar-inverse .navbar-inner{padding:0;}
+.navbar-inverse .navbar-inner{padding:0;background: #FFFFFF;}
 .navbar-inverse .nav-collapse .dropdown-menu a:hover,.navbar-inverse .nav-collapse .dropdown-menu a:focus{background:transparent;color:#efefef}
 .navbar .nav > li > a{border-left:3px solid transparent}
 .navbar .nav > li > a:hover,.navbar .nav > li > a:active,.navbar .nav > li > a:focus{border-left:3px solid #85CCB1}
