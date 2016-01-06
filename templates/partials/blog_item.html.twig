@@ -141,10 +141,12 @@
                 </ul>
               </div>
 
-              {% if truncate and page.summary != page.content %}
-              <div class="pull-left"><a href="{{ page.url }}" class="read-more">Continue Reading</a></div>
-              {% elseif truncate %}
-              <div class="pull-left"><a href="{{ page.url }}" class="read-more">Continue Reading</a></div>
+              {% if page.header.continue_link is not sameas(false) %}
+                {% if truncate and page.summary != page.content %}
+                  <div class="pull-left"><a href="{{ page.url }}" class="read-more">Continue Reading</a></div>
+                {% elseif truncate %}
+                  <div class="pull-left"><a href="{{ page.url }}" class="read-more">Continue Reading</a></div>
+                {% endif %}
               {% endif %}
               <div class="clear"></div>
             </div>
