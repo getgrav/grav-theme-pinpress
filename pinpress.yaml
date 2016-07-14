@@ -1,7 +1,3 @@
 enabled: true
-streams:
-  scheme:
-    theme:
-      type: ReadOnlyStream
-      paths:
-        - user/themes/pinpress
+dropdown:
+  enabled: false
