@@ -1,3 +1,9 @@
+# v1.x.0
+## 11/xx/2016
+
+1. [](#bugfix)
+    * Fix comments form, the custom twig provides no custom styling and breaks it
+
 # v1.2.0
 ## 07/14/2016
 
@@ -9,7 +15,7 @@
 1. [](#bugfix)
     * Fix pagination
     * Fix setting the page language in the html tag
-    
+
 # v1.1.0
 ## 01/06/2016
 
