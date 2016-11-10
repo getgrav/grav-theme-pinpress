@@ -1,5 +1,5 @@
-# v1.x.0
-## 11/xx/2016
+# v1.3.0
+## 11/10/2016
 
 1. [](#bugfix)
     * Fix comments form, the custom twig provides no custom styling and breaks it
