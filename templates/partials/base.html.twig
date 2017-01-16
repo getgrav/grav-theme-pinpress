@@ -17,8 +17,8 @@
         {% block stylesheets %}
             {% do assets.addCss('theme://css/widget.css') %}
             {% do assets.addCss('theme://css/style.css') %}
-            {% do assets.addCss('theme://css/content.css') %}
-            {% do assets.addCss('theme://css/sidebar.css') %}
+            {% do assets.addCss('theme://css/content.css', 101) %}
+            {% do assets.addCss('theme://css/sidebar.css', 100) %}
             {% do assets.addCss('theme://css/lightbox.css') %}
             {% if browser.getBrowser == 'msie' and browser.getVersion >= 7 and browser.getVersion <= 8 %}
                 {% do assets.addCss('theme://css/ie.css') %}
