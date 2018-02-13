@@ -5,9 +5,9 @@ icon: group
 author:
   name: Team Grav
   email: devs@getgrav.org
-  url: http://getgrav.org
+  url: https://getgrav.org
 homepage: https://github.com/getgrav/grav-theme-pinpress
-demo: http://demo.getgrav.org/pinpress-skeleton
+demo: https://demo.getgrav.org/pinpress-skeleton
 keywords: pinpress, theme, onepage, modern, fast, responsive, html5, css3
 bugs: https://github.com/getgrav/grav-theme-pinpress/issues
 license: CC BY 3.0

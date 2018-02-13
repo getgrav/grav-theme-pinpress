@@ -31,7 +31,7 @@ The theme by itself is useful, but you may have an easier time getting up and ru
 
 ## GPM Installation (Preferred)
 
-The simplest way to install this theme is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's Terminal (also called the command line).  From the root of your Grav install type:
+The simplest way to install this theme is via the [Grav Package Manager (GPM)](https://learn.getgrav.org/cli-console/grav-cli-gpm) through your system's Terminal (also called the command line).  From the root of your Grav install type:
 
     bin/gpm install pinpress
 
@@ -39,13 +39,13 @@ This will install the Pinpress theme into your `/user/themes` directory within G
 
 ## Manual Installation
 
-To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `pinpress`. You can find these files either on [GitHub](https://github.com/getgrav/grav-theme-pinpress) or via [GetGrav.org](http://getgrav.org/downloads/themes).
+To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `pinpress`. You can find these files either on [GitHub](https://github.com/getgrav/grav-theme-pinpress) or via [GetGrav.org](https://getgrav.org/downloads/themes).
 
 You should now have all the theme files under
 
     /your/site/grav/user/themes/pinpress
 
->> NOTE: This theme is a modular component for Grav which requires the [Grav](http://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-theme-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
+>> NOTE: This theme is a modular component for Grav which requires the [Grav](https://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-theme-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
 
 # Updating
 
@@ -53,7 +53,7 @@ As development for the Pinpress theme continues, new versions may become availab
 
 ## GPM Update (Preferred)
 
-The simplest way to update this theme is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm). You can do this with this by navigating to the root directory of your Grav install using your system's Terminal (also called command line) and typing the following:
+The simplest way to update this theme is via the [Grav Package Manager (GPM)](https://learn.getgrav.org/cli-console/grav-cli-gpm). You can do this with this by navigating to the root directory of your Grav install using your system's Terminal (also called command line) and typing the following:
 
     bin/gpm update pinpress
 
@@ -64,7 +64,7 @@ This command will check your Grav install to see if your Pinpress theme is due f
 Manually updating Pinpress is pretty simple. Here is what you will need to do to get this done:
 
 * Delete the `your/site/user/themes/pinpress` directory.
-* Download the new version of the Pinpress theme from either [GitHub](https://github.com/getgrav/grav-theme-pinpress) or [GetGrav.org](http://getgrav.org/downloads/themes).
+* Download the new version of the Pinpress theme from either [GitHub](https://github.com/getgrav/grav-theme-pinpress) or [GetGrav.org](https://getgrav.org/downloads/themes).
 * Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `pinpress`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 
