@@ -159,7 +159,7 @@ border-bottom: 1px solid #ddd;
     background: none repeat scroll 0% 0% #333;
   }
   #related-posts img {
-    background: url('http://1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png') repeat scroll 0% 0% #fff;
+    background: url('../images/background.png') repeat scroll 0% 0% #fff;
     display: table-cell;
     text-align: center;
     color: #EB005D;

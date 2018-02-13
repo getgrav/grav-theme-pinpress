@@ -114,27 +114,27 @@
               <div class="pull-right share-story-container">
                 <ul class="share-story">
                   <li>
-                    <a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank">
+                    <a href="https://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank">
                       <i class="fa fa-facebook"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://twitter.com/home?status={{ page.title|replace({' ': "%20"}) }}-{{ page.url(true) }}" target="_blank">
+                    <a href="https://twitter.com/home?status={{ page.title|replace({' ': "%20"}) }}-{{ page.url(true) }}" target="_blank">
                       <i class="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                    <a href="https://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
                       <i class="fa fa-digg"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                    <a href="https://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
                       <i class="fa fa-reddit"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank">
                       <i class="fa fa-linkedin"></i>
                     </a>
                   </li>
@@ -157,7 +157,7 @@
               {% if page.header.author.logo or page.header.author.gravatar %}
               <div class="author-image">
                 {% if page.header.author.gravatar %}
-                  <img src="http://www.gravatar.com/avatar/{{ page.header.author.gravatar|md5 }}?s=90" class="avatar-author" alt="Gravatar"/>
+                  <img src="https://www.gravatar.com/avatar/{{ page.header.author.gravatar|md5 }}?s=90" class="avatar-author" alt="Gravatar"/>
                 {% elseif page.header.author.logo  %}
                   <img src="{{ page.media.images[page.header.author.logo].url }}" class="avatar-author" />
                 {% endif %}
@@ -179,7 +179,7 @@
               {% if site.author.logo or site.author.gravatar %}
               <div class="author-image">
                 {% if site.author.gravatar  %}
-                  <img src="http://www.gravatar.com/avatar/{{ site.author.gravatar|md5 }}?s=90" class="avatar-author" alt="Gravatar"/>
+                  <img src="https://www.gravatar.com/avatar/{{ site.author.gravatar|md5 }}?s=90" class="avatar-author" alt="Gravatar"/>
                 {% elseif site.author.logo  %}
                   <img src="{{ theme_url }}/images/{{ site.author.logo }}" class="avatar-author" />
                 {% endif %}

@@ -830,7 +830,7 @@ background-color: #FFFFFF;
 border-radius: 1px 1px 1px 1px;
 box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
 line-height: 98px;
-background: #FFF url("http://4.bp.blogspot.com/-u8ZOp2KyBdo/VWcsFN545bI/AAAAAAAAFbY/fptXy6fX66k/s1600/header-top.png") repeat-x top center;
+background: #FFF url("../images/header-top.png") repeat-x top center;
 border-bottom: 1px solid #d3d5d7;
 -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
 -moz-box-shadow: 0 0 5px 0 #e2e3e4;
@@ -1259,7 +1259,7 @@ position: relative;
 display: block;
 float: none!important;}
 }
-.post-avatar{background:url(http://1.gravatar.com/avatar/99959a1d886d913ef29cd5d607c58952?s=100&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&r=G)}
+.post-avatar{background:url(https://1.gravatar.com/avatar/99959a1d886d913ef29cd5d607c58952?s=100&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D100&r=G)}
 .firstload-background {
 background:#f1f1f1;
 height: 100%;
