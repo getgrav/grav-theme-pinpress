@@ -1,5 +1,5 @@
 name: Pinpress
-version: 1.3.0
+version: 1.4.0
 description: "PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choice for professionals who’s looking for a magazine theme or a personal niche, corporate, and marketing blogs."
 icon: group
 author:
@@ -11,6 +11,9 @@ demo: http://demo.getgrav.org/pinpress-skeleton
 keywords: pinpress, theme, onepage, modern, fast, responsive, html5, css3
 bugs: https://github.com/getgrav/grav-theme-pinpress/issues
 license: CC BY 3.0
+
+dependencies:
+  - { name: grav, version: '>=1.5.10' }
 
 form:
   validation: loose
