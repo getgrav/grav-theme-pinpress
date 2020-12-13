@@ -6,7 +6,7 @@
   <div class="entry-container">
     <div class="entry-content  single">
       <h1 class="entry-title single">{{ form.message }}</h1>
-      {{ content }}
+      {{ content|raw }}
       {% if config.plugins.form.enabled %}
          {% include "forms/data.html.twig" %}
       {% endif  %}
