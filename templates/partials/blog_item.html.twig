@@ -7,7 +7,7 @@
 
       {% if page.header.link %}
       <h1 class="entry-title">
-        {% if page.header.continue_link is not sameas(false) %}
+        {% if page.header.continue_link is not same as(false) %}
           <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
         {% endif %}
           <a href="{{ page.header.link }}">{{ page.title }}</a>
@@ -91,21 +91,21 @@
         <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
         {% endif %}
         {% if page.media.images|first %}
-          {{ page.media.images|first.cropZoom(750,422).html('','', 'thumb') }}
+          {{ page.media.images|first.cropZoom(750,422).html('','', 'thumb')|raw }}
         {% endif %}
       </div>
 
-            {% if page.header.continue_link is sameas(false) %}
-            {{ page.content }}
+            {% if page.header.continue_link is same as(false) %}
+            {{ page.content|raw }}
             {% if not truncate %}
             {% set show_prev_next = true %}
             {% endif %}
             {% elseif truncate and page.summary != page.content %}
-            {{ page.summary }}
+            {{ page.summary|raw }}
             {% elseif truncate %}
             {{ page.content|truncate(550) }}
             {% else %}
-            {{ page.content }}
+            {{ page.content|raw }}
             {% set show_prev_next = true %}
             {% endif %}
 
@@ -141,7 +141,7 @@
                 </ul>
               </div>
 
-              {% if page.header.continue_link is not sameas(false) %}
+              {% if page.header.continue_link is not same as(false) %}
                 {% if truncate and page.summary != page.content %}
                   <div class="pull-left"><a href="{{ page.url }}" class="read-more">Continue Reading</a></div>
                 {% elseif truncate %}

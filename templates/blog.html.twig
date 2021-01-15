@@ -14,7 +14,7 @@
 
     {% block content %}
 
-    {{ page.content }}
+    {{ page.content|raw }}
         {% include 'partials/blog_sidebar_header.html.twig' %}
 
         {% for child in collection %}
