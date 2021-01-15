@@ -1,5 +1,7 @@
 name: Pinpress
-version: 1.4.0
+slug: pinpress
+type: theme
+version: 1.4.1
 description: "PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choice for professionals who’s looking for a magazine theme or a personal niche, corporate, and marketing blogs."
 icon: group
 author:
