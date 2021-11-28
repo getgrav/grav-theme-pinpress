@@ -27,8 +27,6 @@ PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choic
 
 Installing the Pinpress theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
 
-The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. The [Pinpress Site Skeleton](https://github.com/getgrav/grav-skeleton-pinpress-blog) is a self-contained repository for a complete sites which includes: sample content, configuration, theme, and plugins.
-
 ## GPM Installation (Preferred)
 
 The simplest way to install this theme is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's Terminal (also called the command line).  From the root of your Grav install type:
