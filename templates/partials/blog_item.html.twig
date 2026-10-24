@@ -103,7 +103,7 @@
             {% elseif truncate and page.summary != page.content %}
             {{ page.summary|raw }}
             {% elseif truncate %}
-            {{ page.content|truncate(550) }}
+            {{ page.content|truncate(550)|raw }}
             {% else %}
             {{ page.content|raw }}
             {% set show_prev_next = true %}

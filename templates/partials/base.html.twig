@@ -31,12 +31,6 @@
             {% do assets.add('theme://js/video.js') %}
         {% endblock %}
 
-        <script>
-        $(document).ready(function(){
-          $(".widget h2").wrapInner("<span></span>");
-        });
-        </script>
-
         {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         {% endif %}
@@ -45,6 +39,12 @@
           {{ assets.css()|raw }}
           {{ assets.js()|raw }}
         {% endblock %}
+
+        <script>
+        $(document).ready(function(){
+          $(".widget h2").wrapInner("<span></span>");
+        });
+        </script>
 
     {% endblock head %}
 </head>
